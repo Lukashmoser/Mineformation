@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Press+Start+2P&display=swap');
+/*
+font-family: 'Press Start 2P', cursive;
+font-family: 'Anton', sans-serif;
+*/
+
+body{
+    background-image: url(images/minecraft_stone.jpg);
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    box-sizing: border-box;
+}
+
+.title{
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
+.text{
+    font-family: 'Anton', sans-serif;
+}
+
+#main{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(0,0,0,0.2);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+
+/*
+Beginning of Header CSS
+*/
+#header{
+    height: 7vh;
+}
+
+#logo{
+    height: 7vh;
+    grid-area: logo;
+    float: left;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+}
+
+#title{
+    grid-area: title;
+    font-size: 4vh;
+    padding-top: 1.5vh;
+    display: none;
+}
+
+#search{
+    grid-area: search;
+    float: right;
+}
+
+#button{
+    background: none;
+    border: none;
+}
+
+i{
+    color: white;
+}
+
+#searchbar{
+    height: 5vh;
+    width: 30vh;
+    border-radius: 0.2rem;
+    border: none;
+}
+/*
+End of Header CSS
+*/
+
+/*
+Beginning of Player CSS
+*/
+#playerHolder{
+    text-align: center;
+    display: grid;
+    grid-template-areas: 
+    'skin'
+    'name'
+    'uuid'
+    'prevnames';
+    margin-bottom: 2rem;
+}
+
+#playerSkin{
+    grid-area: skin;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#playerCape{
+    grid-area: cape;
+}
+
+#playerName{
+    grid-area: name;
+    margin-bottom: 1rem;
+}
+
+#playerUUID{
+    grid-area: uuid;
+    font-size: 0.6rem;
+    margin-top: 0.5rem;
+}
+
+#playerPrevNames{
+    grid-area: prevnames;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+}
+#playerPrevNames ol{
+    height: 10rem;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+/*
+End of Player CSS
+*/
+
+/*
+Beginning of Server CSS
+*/
+#serverHolder{
+    display: grid;
+    grid-template-columns: 80px 1fr;
+        grid-template-areas: 
+        'icon name'
+        'icon ip'
+        'icon player'
+        'status status'
+        'version version';
+    padding: 1rem;
+}
+
+#serverName{
+    grid-area: name;
+}
+
+#serverIcon{
+    grid-area: icon;
+}
+
+#serverIp{
+    grid-area: ip;
+}
+
+#serverStatus{
+    grid-area: status;
+}
+
+#serverPlayers{
+    grid-area: player;
+}
+
+#serverVersion{
+    grid-area: version;
+}
+/*
+End of Server CSS
+*/
+
+/*
+Instructions CSS
+*/
+#instructions{
+    display: none;
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.8);
+    color: white;
+    text-align: center;
+    align-items: center;
+}
+
+#instbox{
+    width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    background: #333;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}
+
+/*
+Search Result CSS
+*/
+#lightbox{
+    display: none;
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.8);
+    align-items: center;
+}
+
+#searchResult{
+    background-image: url(images/oak-plank.png);
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    padding: 1rem;
+    width: 400px;
+    border-radius: 0.5rem;
+    margin: auto;
+}
+
+
+/*
+Responsive Design Media Queries
+*/
+/*
+List of tags to change
+- #searchResult
+- #instbox
+- #playerHolder
+- #title
+- #main
+*/
+
+@media screen and (min-width: 769px){
+    body{
+        box-sizing: content-box;
+    }
+    #main{
+        width: 768px;
+    }
+
+    #title{
+        display: inline-block;
+    }
+
+    #playerHolder{
+        grid-template-columns: 384px 384px;
+        grid-template-areas: 
+        'skin name'
+        'skin uuid'
+        'skin cape'
+        'skin prevnames';
+    }
+    #instbox{
+        width: 768px;
+    }
+
+    #searchResult{
+        width: 768px;
+        background-size: 300px 300px;
+    }
+  
+    #serverHolder{
+        grid-template-columns: 80px 1fr 1fr 1fr;
+        grid-template-areas: 
+        'icon name name name'
+        'icon ip player status'
+        'icon version version version';
+    }
+}
+
+@media screen and (max-width: 925px){
+  #title{
+    display : none;
+  }  
+}
+
+@media screen and (min-width: 501px) and (max-width: 768px){
+    body{
+        box-sizing: content-box;
+    }
+
+    #main{
+        width: 500px;
+    }
+
+    #title{
+        display: none;
+    }
+
+    #playerHolder{
+        grid-template-columns: 250px 250px;
+        grid-template-areas: 
+        'skin name'
+        'skin uuid'
+        'skin cape'
+        'skin prevnames';
+    }
+    #instbox{
+        width: 500px;
+    }
+
+    #searchResult{
+        width: 500px;
+        background-size: 300px 300px;
+    }
+    #serverHolder{
+        grid-template-columns: 80px 1fr;
+        grid-template-areas: 
+        'icon name name name'
+        'icon ip player status'
+        'icon version version version';
+    }
+}

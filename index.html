@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/dacf5d1f5d.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="images/Mineformation-logo.png">
+    <link rel="manifest" href="manifest.json">
+    
+    <title>Mineformation</title>
+</head>
+<body>
+    <header id="header">
+        <img id="logo" src="images/Mineformation-logo.png" alt="Mineformation Logo">
+        <div id="title" class="title">Mineformation</div>
+        <span id="search">
+            <button id="button" onclick="search()"><i id="icon" class="fas fa-search"></i></button>
+            <input type="search" placeholder="Name / UUID / Server Name, Server Ip" autocomplete="off" id="searchbar" class="text">
+        </span>
+    </header>
+
+    <div id="instructions" onclick="instructions('off')">
+        <div id="instbox">
+            <h2 class="title">Instructions</h2>
+            <h3 class="title">Server Search</h3>
+            <p class="text">For the server search you need to first type in the server name, then a comma, and then the ip address of the server. Once you have typed it in click on the magnifying glass to confirm your search.<br>*Note : If any part of the Ip address is mistyped the search will not work</p>
+            <h3 class="title">Player Search</h3>
+            <p class="text">For the player search you have the choice to either type in the players username or their uuid. Once you have typed it in click on the magnifying glass to confirm your search.<br>*Note : The username and uuid are not case sensitive so don't worry about capitalizing.</p>
+        </div>
+    </div>
+
+    <div id="lightbox" onclick="searchResults('off')">
+        <div id="searchResult">
+
+        </div>
+    </div>
+    
+
+    <div id="main">
+        <div id="intro">
+            <h2 class="title">Welcome To Mineformation</h2>
+            <p class="text">On this site you can look up and view any minecraft profile or server. You will be shown their skin, name, uuid, and previous names if they have any or for a server you will be shown its icon, name, ip, current players, max players, status, and compatible versions.</p>
+            <button id="showInstructions" class="text" onclick="instructions('on')">Show Instructions</button>
+        </div>
+
+        <div id="player">
+
+        </div>
+
+        <div id="servers">
+            <h2 id="popServers" class="title">Popular Servers</h2>
+        </div>
+    </div>
+</body>
+</html>
