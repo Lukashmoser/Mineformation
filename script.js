@@ -134,6 +134,7 @@ function displayServer(location, data, sName, sIp){
     let icon = document.createElement("img");
     icon.id = "serverIcon";
     icon.src = data.icon;
+    icon.alt = "server icon";
     div.appendChild(icon);
 
     //display server name
@@ -192,6 +193,7 @@ function displayProfile(data, location){
     let skin = document.createElement("img");
     skin.id = "playerSkin";
     skin.src = skinURL;
+    skin.alt = "image of players character";
     div.appendChild(skin);
 
     //get player name and display
