@@ -10,6 +10,9 @@
     <link rel="icon" href="images/Mineformation-logo.png">
     <link rel="manifest" href="manifest.json">
     <meta name="description" content="A website designed to allow users to search information about the profiles of other players as well as being able to search information about servers of their choosing.">
+    <meta name="theme-color" content="#777777">
+    <link rel="apple-touch-icon" href="images/Mineformation-logo.png">
+
     
     <title>Mineformation</title>
 </head>
@@ -18,7 +21,7 @@
         <img id="logo" src="images/Mineformation-logo.png" alt="Mineformation Logo">
         <div id="title" class="title">Mineformation</div>
         <span id="search">
-            <button id="button" onclick="search()"><i id="icon" class="fas fa-search"></i></button>
+            <button id="button" onclick="search()" aria-label="search button"><i id="icon" class="fas fa-search"></i></button>
             <input type="search" placeholder="Name / UUID / Server Name, Server Ip" autocomplete="off" id="searchbar" class="text">
         </span>
     </header>
