@@ -38,7 +38,8 @@ Beginning of Header CSS
 }
 
 #logo{
-    height: 7vh;
+    height: 62px;
+    width: 62px;
     grid-area: logo;
     float: left;
     margin-right: 1rem;
