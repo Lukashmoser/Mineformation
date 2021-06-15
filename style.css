@@ -94,6 +94,8 @@ Beginning of Player CSS
     grid-area: skin;
     margin-left: auto;
     margin-right: auto;
+    width: 120px;
+    height: 270px;
 }
 
 #playerCape{
@@ -109,6 +111,7 @@ Beginning of Player CSS
     grid-area: uuid;
     font-size: 0.6rem;
     margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 #playerPrevNames{
@@ -146,6 +149,8 @@ Beginning of Server CSS
 
 #serverIcon{
     grid-area: icon;
+    width: 64px;
+    height: 64px;
 }
 
 #serverIp{

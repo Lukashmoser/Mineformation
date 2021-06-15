@@ -126,54 +126,56 @@ function search(){
 function displayServer(location, data, sName, sIp){
     let main = document.getElementById(location);
 
-    //create server box
-    let div = document.createElement("div");
-    div.id = "serverHolder";
+    if(data.serverStatus == "online"){
+        //create server box
+        let div = document.createElement("div");
+        div.id = "serverHolder";
 
-    //add server icon
-    let icon = document.createElement("img");
-    icon.id = "serverIcon";
-    icon.src = data.icon;
-    icon.alt = "server icon";
-    div.appendChild(icon);
+        //add server icon
+        let icon = document.createElement("img");
+        icon.id = "serverIcon";
+        icon.src = data.icon;
+        icon.alt = "server icon";
+        div.appendChild(icon);
 
-    //display server name
-    let name = document.createElement("div");
-    name.id = "serverName"
-    name.classList.add("title");
-    name.innerHTML = sName;
-    div.appendChild(name);
+        //display server name
+        let name = document.createElement("div");
+        name.id = "serverName"
+        name.classList.add("title");
+        name.innerHTML = sName;
+        div.appendChild(name);
 
-    //display server ip
-    let ip = document.createElement("div");
-    ip.id = "serverIp";
-    ip.classList.add("text");
-    ip.innerHTML = "Ip : " + sIp;
-    div.appendChild(ip);
+        //display server ip
+        let ip = document.createElement("div");
+        ip.id = "serverIp";
+        ip.classList.add("text");
+        ip.innerHTML = "Ip : " + sIp;
+        div.appendChild(ip);
 
-    //display required version
-    let version  = document.createElement("div");
-    version.id = "serverVersion";
-    version.classList.add("text");
-    version.innerHTML = "Version : " + data.version;
-    div.appendChild(version);
+        //display required version
+        let version  = document.createElement("div");
+        version.id = "serverVersion";
+        version.classList.add("text");
+        version.innerHTML = "Version : " + data.version;
+        div.appendChild(version);
 
-    //display player count
-    let player = document.createElement("div");
-    player.id = "serverPlayers";
-    player.classList.add("text");
-    player.innerHTML = "Players : " + data.players + "/" + data.maxplayers;
-    div.appendChild(player);
+        //display player count
+        let player = document.createElement("div");
+        player.id = "serverPlayers";
+        player.classList.add("text");
+        player.innerHTML = "Players : " + data.players + "/" + data.maxplayers;
+        div.appendChild(player);
 
-    //display server status
-    let status = document.createElement("div");
-    status.id = "serverStatus";
-    status.classList.add("text");
-    status.innerHTML = "Status : " + data.serverStatus;
-    div.appendChild(status);
+        //display server status
+        let status = document.createElement("div");
+        status.id = "serverStatus";
+        status.classList.add("text");
+        status.innerHTML = "Status : " + data.serverStatus;
+        div.appendChild(status);
 
-    //append to main
-    main.appendChild(div);
+        //append to main
+        main.appendChild(div);
+    }
 
 }
 
