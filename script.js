@@ -6,8 +6,21 @@ function instantInfo(){
     //display 5 or so servers
     //Hypixel
     fetch("https://cors-anywhere.herokuapp.com/https://mcapi.xdefcon.com/server/mc.hypixel.net/full/json")
-    .then(response => response.json())
-    .then(data => addServerStatusAndPlayers(data, "hypStatus", "hypPlayers"));
+        .then(function(response){
+            console.log(response);
+            return response.json();
+        })
+        .then(function(data){
+            console.log(data);
+            if(data.serverStatus == "offline"){
+                console.log("badSearch");
+            } else {
+                addServerStatusAndPlayers(data, "hypStatus", "hypPlayers");
+            }
+        });
+    //fetch("https://cors-anywhere.herokuapp.com/https://mcapi.xdefcon.com/server/mc.hypixel.net/full/json")
+    //.then(response => response.json())
+    //.then(data => addServerStatusAndPlayers(data, "hypStatus", "hypPlayers"));
 
     //PvP Land
     fetch("https://cors-anywhere.herokuapp.com/https://mcapi.xdefcon.com/server/pvp.land/full/json")

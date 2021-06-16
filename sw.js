@@ -16,7 +16,8 @@ self.addEventListener('install', function(event) {
         '/images/hypixel-logo.png',
         '/images/purple-prison-logo.png',
         '/images/pvp-land-logo.png',
-        '/images/TheKrazySheep.png'
+        '/images/TheKrazySheep.png',
+        '/images/Mineformation-logo.png'
       ]);
     })
   );
