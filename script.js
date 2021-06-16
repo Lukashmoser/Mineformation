@@ -3,37 +3,38 @@ window.onload = function(){
 }
 
 function instantInfo(){
-    //my profile to be shown on the home page
-    //c659103ba8714b8dbaa1c83634bc4d74
-    fetch("https://cors-anywhere.herokuapp.com/https://sessionserver.mojang.com/session/minecraft/profile/966ad6752b3a4de68e961b4c340d8fb3")
-    .then(response => response.json())
-    .then(data => displayProfile(data, "player"));
-
     //display 5 or so servers
     //Hypixel
     fetch("https://cors-anywhere.herokuapp.com/https://mcapi.xdefcon.com/server/mc.hypixel.net/full/json")
     .then(response => response.json())
-    .then(data => displayServer("servers", data, "Hypixel", "mc.hypixel.net"));
+    .then(data => addServerStatusAndPlayers(data, "hypStatus", "hypPlayers"));
 
     //PvP Land
     fetch("https://cors-anywhere.herokuapp.com/https://mcapi.xdefcon.com/server/pvp.land/full/json")
     .then(response => response.json())
-    .then(data => displayServer("servers", data, "PvP Land", "pvp.land"));
+    .then(data => addServerStatusAndPlayers(data, "plStatus", "plPlayers"));
 
     //Purple Prison
     fetch("https://cors-anywhere.herokuapp.com/https://mcapi.xdefcon.com/server/prisonfun.co/full/json")
     .then(response => response.json())
-    .then(data => displayServer("servers", data, "Purple Prison", "prisonfun.co"));
+    .then(data => addServerStatusAndPlayers(data, "ppStatus", "ppPlayers"));
 
     //FallenKingdom
     fetch("https://cors-anywhere.herokuapp.com/https://mcapi.xdefcon.com/server/play.fallenkingdom.co/full/json")
     .then(response => response.json())
-    .then(data => displayServer("servers", data, "Fallen Kingdom", "play.fallenkingdom.net"));
+    .then(data => addServerStatusAndPlayers(data, "fkStatus", "fkPlayers"));
 
     //Bedwars Practice
     fetch("https://cors-anywhere.herokuapp.com/https://mcapi.xdefcon.com/server/bedwarspractice.club/full/json")
     .then(response => response.json())
-    .then(data => displayServer("servers", data, "Bedwars Practice", "bedwarspractice.club"));
+    .then(data => addServerStatusAndPlayers(data, "bpStatus", "bpPlayers"));
+    
+}
+
+function addServerStatusAndPlayers(data, status, player){
+    console.log(data);
+    document.getElementById(status).innerHTML = "Status : " + data.serverStatus;
+    document.getElementById(player).innerHTML = "Players : " + data.players + " / " + data.maxplayers;
 }
 
 function search(){
@@ -161,14 +162,14 @@ function displayServer(location, data, sName, sIp){
 
         //display player count
         let player = document.createElement("div");
-        player.id = "serverPlayers";
+        player.classList.add("serverPlayers");
         player.classList.add("text");
         player.innerHTML = "Players : " + data.players + "/" + data.maxplayers;
         div.appendChild(player);
 
         //display server status
         let status = document.createElement("div");
-        status.id = "serverStatus";
+        status.classList.add("serverStatus");
         status.classList.add("text");
         status.innerHTML = "Status : " + data.serverStatus;
         div.appendChild(status);

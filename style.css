@@ -38,8 +38,7 @@ Beginning of Header CSS
 }
 
 #logo{
-    height: 62px;
-    width: 62px;
+    height: 7vh;
     grid-area: logo;
     float: left;
     margin-right: 1rem;
@@ -158,11 +157,11 @@ Beginning of Server CSS
     grid-area: ip;
 }
 
-#serverStatus{
+.serverStatus{
     grid-area: status;
 }
 
-#serverPlayers{
+.serverPlayers{
     grid-area: player;
 }
 

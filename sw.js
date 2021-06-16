@@ -10,7 +10,13 @@ self.addEventListener('install', function(event) {
         '/script.js',
         '/notfound.txt',
         '/images/minecraft_stone.jpg',
-        '/images/oak-plank.png'
+        '/images/oak-plank.png',
+        '/images/bedwars-practice-logo.png',
+        '/images/fallen-kingdom-logo.png',
+        '/images/hypixel-logo.png',
+        '/images/purple-prison-logo.png',
+        '/images/pvp-land-logo.png',
+        '/images/TheKrazySheep.png'
       ]);
     })
   );
