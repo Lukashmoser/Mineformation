@@ -32,8 +32,7 @@ function instantInfo(){
 }
 
 function addServerStatusAndPlayers(data, status, player){
-    console.log(data);
-    document.getElementById(status).innerHTML = "Status : " + data.serverStatus;
+  document.getElementById(status).innerHTML = "Status : " + data.serverStatus;
     document.getElementById(player).innerHTML = "Players : " + data.players + " / " + data.maxplayers;
 }
 
@@ -61,11 +60,9 @@ function search(){
         name = name.replace(name.charAt(0), firstLetter);
         fetch(serverURL)
         .then(function(response){
-            console.log(response);
             return response.json();
         })
         .then(function(data){
-            console.log(data);
             if(data.serverStatus == "offline"){
                 invalidSearch();
             } else {
@@ -94,7 +91,7 @@ function search(){
                 invalidSearch();
             }
         });
-
+    
     //player username search
     //working
     } else if(search.length < 17){
@@ -102,6 +99,7 @@ function search(){
         URL += search;
             fetch(URL)
             .then(function(response){
+                console.log(response);
                 if (response.status != 204){
                     return response.json();
                 }else {
@@ -109,6 +107,7 @@ function search(){
                 }
             })
             .then(function(data){
+                console.log("data : " + data);
                 if (data != null) {
                     url += data.id;
                     url.replace('"','');
@@ -119,6 +118,10 @@ function search(){
                     invalidSearch();
                 }
             })
+            .catch(err => function (err) {
+                  console.log("Error: " + err);
+               }
+            );
     } else{
         invalidSearch();
     }
