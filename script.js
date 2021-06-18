@@ -95,11 +95,9 @@ function search(){
     //player username search
     //working
     } else if(search.length < 17){
-        let valid = "true";
         URL += search;
             fetch(URL)
             .then(function(response){
-                console.log(response);
                 if (response.status != 204){
                     return response.json();
                 }else {
@@ -107,21 +105,18 @@ function search(){
                 }
             })
             .then(function(data){
-                console.log("data : " + data);
                 if (data != null) {
                     url += data.id;
                     url.replace('"','');
                     fetch(url)
-                    .then(response => response.json())
+                    .then(function(response){
+                      return response.json();
+                    })
                     .then(data => displayProfile(data, "searchResult"));
                 } else {
                     invalidSearch();
                 }
-            })
-            .catch(err => function (err) {
-                  console.log("Error: " + err);
-               }
-            );
+            });
     } else{
         invalidSearch();
     }
